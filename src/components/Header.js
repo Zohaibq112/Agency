@@ -6,7 +6,16 @@ const Header = () => {
       <nav className="navbar header-nav navbar-expand-lg one-page-nav">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src="assets/img/logo.svg" className="svg" alt="image" />
+           <img
+              src="assets/img/logo.png"
+              alt="logo"
+              style={{
+                width: "150px",
+                height: "auto",
+                marginTop: "-20px",    // move logo up
+                marginBottom: "-20px", // move logo down
+              }}
+            />
           </a>
           <Accordion>
             <Accordion.Toggle
@@ -33,8 +42,14 @@ const Header = () => {
                     <span>Services</span>
                   </a>
                 </li>
+              
                 <li>
-                  <a className="nav-link" href="#skill">
+                  <a className="nav-link" href="#process">
+                    <span>Process</span>
+                  </a>
+                </li>
+                  <li>
+                  <a className="nav-link" href="#skills">
                     <span>Skills</span>
                   </a>
                 </li>
@@ -43,6 +58,7 @@ const Header = () => {
                     <span>Portfolio</span>
                   </a>
                 </li>
+                
                 <li>
                   <a className="nav-link" href="#contactus">
                     <span>Contact</span>

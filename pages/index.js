@@ -8,7 +8,9 @@ import Skill from "@/src/components/Skill";
 import Testimonial from "@/src/components/Testimonial";
 import ImageView from "@/src/components/popup/ImageView";
 import { boston } from "@/src/utils";
+import Process from "@/src/components/Process";
 import { Fragment, useEffect } from "react";
+import WhyWorkWithUs from "@/src/components/trust";
 const Index = () => {
   useEffect(() => {
     boston.scrollToActiveNav();
@@ -29,17 +31,24 @@ const Index = () => {
         {/* End Home Section */}
         {/* Services Section */}
         <Services />
+        <Process />
         {/* End Services Section */}
         {/* Skill Section */}
         <Skill />
         {/* End Skill Section */}
         {/* Work Section */}
+         
         <Portfolio />
+
+       
         {/* End Work Section */}
         {/* testimonial Section */}
+        <WhyWorkWithUs />
         <Testimonial />
         {/* End testimonial Section */}
         {/* Contact Section */}
+
+
         <Contact />
         {/* End Contact Section */}
         {/* Effect */}

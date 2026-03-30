@@ -21,12 +21,7 @@ const Home = () => {
                 Crafting Digital Excellence
               </h1>
               <p>
-                As an innovative agency, we specialize in designing and
-                developing bespoke solutions for clients of all sizes. With a
-                focus on creating stylish, modern websites, web services, and
-                online stores, we cater to your unique needs and aspirations,
-                delivering exceptional results that elevate your digital
-                presence.
+As a forward-thinking agency, we specialize in designing and developing bespoke websites, web services, and online stores for clients of all sizes. By focusing on modern, stylish, and highly functional solutions, we deliver exceptional results that elevate your digital presence. Over the years, we’ve helped 50+ businesses worldwide strengthen their brand, engage audiences, and grow revenue.
               </p>
               <div className="btn-bar">
                 <a className="px-btn px-btn-theme" href="#contactus">

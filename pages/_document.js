@@ -7,8 +7,8 @@ export default function Document() {
         <meta charSet="utf-8" />
         <meta name="author" content="Ahad Ali" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="keywords" content="Webia Solutionz" />
-        <meta name="description" content="Webia Solutionz" />
+        <meta name="keywords" content="TheWebDevelopers" />
+        <meta name="description" content="TheWebDevelopers – Modern Digital Agency Website" />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
         <link href="/assets/css/style.css" rel="stylesheet" />
       </Head>

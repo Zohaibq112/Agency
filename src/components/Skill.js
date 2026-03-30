@@ -1,67 +1,147 @@
 import SectionTitle from "./SectionTitle";
-import { FaNextJs } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaJenkins,
+  FaShopify,
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiKubernetes,
+  SiSelenium,
+  SiTypescript,
+} from "react-icons/si";
 
 const skillsData = [
-  { id: 1, name: "HTML", icon: "fab fa-html5" },
-  { id: 2, name: "CSS", icon: "fab fa-css3" },
-  { id: 3, name: "JavaScript", icon: "fab fa-js-square" },
-  { id: 4, name: "React JS", icon: "fab fa-react" },
-  { id: 5, name: "Node Js", icon: "fab fa-node-js" },
-  { id: 6, name: "Express Js", icon: "fab fa-apple" },
-  { id: 7, name: "MongoDB", icon: "fas fa-database" },
-  { id: 8, name: "Next JS", icon: "fab fa-js-square" },
-  { id: 9, name: "Typescript", icon: "fab fa-react" },
-  { id: 10, name: "Web SEO", icon: "fas fa-search" },
+  { id: 1, name: "HTML", icon: FaHtml5 },
+  { id: 2, name: "CSS", icon: FaCss3Alt },
+  { id: 3, name: "JavaScript", icon: FaJs },
+  { id: 4, name: "React.js", icon: FaReact },
+  { id: 5, name: "Next.js", icon: SiNextdotjs },
+  { id: 6, name: "Node.js", icon: FaNodeJs },
+  { id: 7, name: "Express.js", icon: SiExpress },
+  { id: 8, name: "MongoDB", icon: SiMongodb },
+  { id: 9, name: "SQL", icon: SiMysql },
+  { id: 10, name: "TypeScript", icon: SiTypescript },
+  { id: 11, name: "Shopify", icon: FaShopify },
+  { id: 12, name: "Docker", icon: FaDocker },
+  { id: 13, name: "Kubernetes", icon: SiKubernetes },
+  { id: 14, name: "Jenkins", icon: FaJenkins },
+  { id: 15, name: "Selenium", icon: SiSelenium },
 ];
 
+// 🔥 split into 3 rows evenly
+const splitIntoRows = (arr, rowsCount) => {
+  const rows = Array.from({ length: rowsCount }, () => []);
+  arr.forEach((item, index) => {
+    rows[index % rowsCount].push(item);
+  });
+  return rows;
+};
+
 const Skill = () => {
+  const rows = splitIntoRows(skillsData, 3);
+
   return (
-    <section id="skill" className="section experience-section">
+    <section className="skill-section bg-gray" id="skills" >
       <div className="container">
-        {/*  */}
-        <div className="row">
-          {/*  */}
-          <div className="col-sm-12 col-lg-6 ">
-            <div className="section-heading">
-              <h6>
-                <span>Skills</span>
-              </h6>
-              <h3>
-                <span>Our Skills</span>
-              </h3>
-            </div>
-            <p className="fs-5">
-              We specialize in crafting sleek websites, dynamic web services,
-              and captivating online stores, tailored to meet diverse client
-              needs. Our passion lies in delivering exceptional experiences that
-              resonate with your audience, elevating your online presence. With
-              a focus on user-centric design and cutting-edge technology, we
-              ensure your digital presence reflects your brand identity and
-              drives engagement. Partner with us to unleash your online
-              ventures' potential and achieve digital success.
-            </p>
-          </div>
-          {/*  */}
-          <div className="col-sm-12 col-lg-6 mt-5">
-            <div className="skill-box">
-              <div className="row g-2">
-                {skillsData.map((skill) => (
-                  <div className="col-6 col-md-4 col-lg-6" key={skill.id}>
-                    <div className="feature-box-02">
-                      <div className="icon">
-                        <i className={skill.icon} />
-                      </div>
+<SectionTitle heading={"Our Skills"} subHeading={"Skills"} />
+        {/* TEXT */}
+        
+
+        {/* SKILLS */}
+        <div className="skills-wrapper">
+          {rows.map((row, index) => (
+            <div key={index} className="slider">
+              <div
+                className={`track ${
+                  index % 2 === 0 ? "move-right" : "move-left"
+                }`}
+              >
+                {[...row, ...row].map((skill, i) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div className="card" key={i}>
+                      <Icon size={38} />
                       <h6>{skill.name}</h6>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
-          </div>
-          {/*  */}
+          ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .skills-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+        }
+
+        .slider {
+          overflow: hidden;
+          width: 100%;
+        }
+
+        .track {
+          display: flex;
+          gap: 20px;
+        }
+
+        /* ✅ 4 CARDS PER ROW */
+        .card {
+          flex: 0 0 calc(25% - 15px);
+          height: 140px;
+          border-radius: 16px;
+          border: 2px solid #000;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-weight: 600;
+        }
+
+        .card h6 {
+          margin-top: 10px;
+        }
+
+        /* 🔥 STEP ANIMATION */
+        .move-right {
+          animation: slideRight 10s infinite;
+        }
+
+        .move-left {
+          animation: slideLeft 10s infinite;
+        }
+
+        @keyframes slideRight {
+          0% { transform: translateX(0); }
+          30% { transform: translateX(0); }         /* pause */
+          50% { transform: translateX(-25%); }      /* move 1 card */
+          80% { transform: translateX(-25%); }      /* pause */
+          100% { transform: translateX(0); }
+        }
+
+        @keyframes slideLeft {
+          0% { transform: translateX(-25%); }
+          30% { transform: translateX(-25%); }
+          50% { transform: translateX(0); }
+          80% { transform: translateX(0); }
+          100% { transform: translateX(-25%); }
+        }
+      `}</style>
     </section>
   );
 };
+
 export default Skill;

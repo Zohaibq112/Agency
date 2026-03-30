@@ -1,6 +1,6 @@
-# Webia Solutionz – Modern Digital Agency Website
+# The Web Developers – Modern Digital Agency Website
 
-Webia Solutionz is a professionally built Next.js website styled using pure CSS and SCSS. It’s designed for modern digital agencies and showcases a strong focus on service presentation, portfolio display, and clean user experience.
+The Web Developers is a professionally built Next.js website styled using pure CSS and SCSS. It’s designed for modern digital agencies and showcases a strong focus on service presentation, portfolio display, and clean user experience.
 
 ## 📖 Overview
 

@@ -1,58 +1,59 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { sliderProps } from "../sliderProps";
 import SectionTitle from "./SectionTitle";
+
 const testimonialData = [
   {
     id: 1,
     avatar: "assets/img/avatar-1.jpg",
-    name: "John Smith",
+    name: "Sophia Müller",
     designation: "Founder",
-    company: "DevSinc",
+    company: "BrightSolutions GmbH",
     comment:
-      "Webia Solutionz exceeded our expectations with their service. The website they created for us is top-notch",
+      "The Web Developers transformed our online presence. Our new website is sleek, fast, and truly reflects our brand.",
   },
   {
     id: 2,
     avatar: "assets/img/avatar-2.jpg",
-    name: "Emily Johnson",
-    designation: "Marketing Manager",
-    company: "Plateup",
+    name: "Liam O'Connor",
+    designation: "Marketing Head",
+    company: "Foodify Ltd.",
     comment:
-      "I'm incredibly impressed with Webia Solutionz. Their professionalism and expertise shine through in every project.",
+      "Working with The Web Developers was seamless. Their attention to detail and creativity made our project stand out.",
   },
   {
     id: 3,
     avatar: "assets/img/avatar-3.jpg",
-    name: "Michael Brown",
-    designation: "Director",
-    company: "Logiks Dev",
+    name: "Isabella Rossi",
+    designation: "CEO",
+    company: "EcoHomes International",
     comment:
-      "Working with Webia Solutionz has been a delight. Their attention to detail and dedication to client are commendable.",
+      "The Web Developers delivered beyond our expectations. The website is modern, responsive, and exactly what we needed.",
   },
   {
     id: 4,
     avatar: "assets/img/avatar-4.jpg",
-    name: "Sophia Rodriguez",
-    designation: "CEO",
-    company: "Sunrise Solutions",
+    name: "Hiroshi Tanaka",
+    designation: "Co-Founder",
+    company: "TechNest Global",
     comment:
-      "Webia Solutionz is the best choice for web solutions. They go above and to deliver exceptional results every time.",
+      "We loved collaborating with The Web Developers. Professional, reliable, and incredibly skilled at bringing our vision to life.",
   },
 ];
 
 const Testimonial = () => {
   return (
-    <section className="section testimonial-section">
+    <section className="section testimonial-section ">
       <div className="container">
         <SectionTitle
-          heading={"Client's Kind Word"}
-          subHeading={"Testimonial"}
+          heading={"What Our Clients Say"}
+          subHeading={"Testimonials"}
         />
         <Swiper {...sliderProps.testimonial} className="lightbox-gallery">
           {testimonialData.map((testimonial) => (
             <SwiperSlide className="feature-box-03" key={testimonial.id}>
               <div className="feature-img">
-                <img src={testimonial.avatar} alt="image" />
+                <img src={testimonial.avatar} alt={testimonial.name} />
               </div>
               <div className="feature-content">
                 <div className="icons">
@@ -72,4 +73,5 @@ const Testimonial = () => {
     </section>
   );
 };
+
 export default Testimonial;

@@ -1,89 +1,69 @@
 import SectionTitle from "./SectionTitle";
 
 const portfolioData = [
-  {
-    id: 1,
-    title: "Zivan - Marketing ",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-1.png",
-  },
-  {
-    id: 2,
-    title: "Collax - Digital",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-2.png",
-  },
-  {
-    id: 3,
-    title: "Ruizarch - Architecture",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-3.png",
-  },
-  {
-    id: 4,
-    title: "Nufti - NFT ",
-    subtitle: "React JS",
-    image: "assets/img/project-4.png",
-  },
-  {
-    id: 5,
-    title: "Edumim - Educational",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-5.png",
-  },
-  {
-    id: 6,
-    title: "Cyfonii - NFT",
-    subtitle: "React JS",
-    image: "assets/img/project-6.png",
-  },
-  {
-    id: 7,
-    title: "Quarter - Real Estate",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-7.png",
-  },
-  {
-    id: 8,
-    title: "Mortal.AI - AI Writer",
-    subtitle: "React/Next JS",
-    image: "assets/img/project-8.png",
-  },
-  {
-    id: 9,
-    title: "ProHealth - Medical",
-    subtitle: "React JS",
-    image: "assets/img/project-9.png",
-  },
+  { id: 1, title: "FuelMeals", image: "assets/img/Document1.jpg", website: "https://www.fuelmeals.com/" },
+  { id: 2, title: "HEDGEHOUSE", image: "assets/img/Document2.jpg", website: "https://www.hedgehouseusa.com/" },
+  { id: 3, title: "WRAY", image: "assets/img/Document3.jpg", website: "https://wray.nyc/" },
+  { id: 4, title: "Nufti - NFT", image: "assets/img/portfolio1.png", website: "https://communitymedcare.com/" },
+  { id: 5, title: "ANJA UK PHOTOGRAPHY", image: "assets/img/image_original.png", website: "https://www.anjaukphotography.com/" },
+  { id: 8, title: "ALTHEAD", image: "assets/img/image2.png", website: "https://www.athlead.com.au/" },
 ];
 
 const Portfolio = () => {
   return (
-    <section id="work" className="section work-section bg-gray">
-      <div className="container">
-        <SectionTitle heading={"Latest Projects"} subHeading={"Portfolio"} />
-        <div className="row g-4 lightbox-gallery">
-          {portfolioData.map((portfolio) => (
-            <div className="col-sm-6 col-lg-4" key={portfolio.id}>
-              <div className="portfolio-box">
-                <div className="portfolio-img">
-                  <a href={portfolio.image} className="gallery-link">
-                    <img src={portfolio.image} alt="image" />
-                  </a>
-                </div>
-                <div className="portfolio-info">
-                  <h6>{portfolio.title}</h6>
-                  <span>{portfolio.subtitle}</span>
-                  <a href={portfolio.image} className="gallery-link">
-                    <i className="fas fa-arrow-right" />
-                  </a>
+    <>
+      <section id="work" className="section work-section">
+        <div className="container">
+          <SectionTitle heading={"Latest Projects"} subHeading={"Portfolio"} />
+          <div className="row g-4 lightbox-gallery">
+            {portfolioData.map((portfolio) => (
+              <div className="col-sm-6 col-lg-4" key={portfolio.id}>
+                <div className="portfolio-box">
+                  <div className="portfolio-img">
+                    <a href={portfolio.image} className="gallery-link">
+                      <img src={portfolio.image} alt={portfolio.title} />
+                    </a>
+                  </div>
+                  <div className="portfolio-info">
+                    <h6>{portfolio.title}</h6>
+                    {/* Arrow now links to website */}
+                    <a
+                      href={portfolio.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gallery-link"
+                    >
+                      <i className="fas fa-arrow-right" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <style jsx>{`
+        .portfolio-box {
+          overflow: hidden;
+          border-radius: 8px;
+          background: #fff;
+          text-align: center;
+        }
+
+        .portfolio-img img {
+          width: 100%;
+          height: 250px; /* uniform height */
+          object-fit: cover;
+          display: block;
+        }
+
+        .portfolio-info {
+          padding: 10px 15px;
+        }
+      `}</style>
+    </>
   );
 };
+
 export default Portfolio;
