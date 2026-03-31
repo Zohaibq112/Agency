@@ -97,7 +97,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\hp\\Documents\\agency\\Webia-Solutionz-Modern-Digital-Agency-Website",
+    "outputFileTracingRoot": "C:\\Users\\hp\\Documents\\agency\\agency",
     "experimental": {
       "useSkewCookie": false,
       "nodeMiddleware": false,
@@ -288,10 +288,10 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.js",
     "turbopack": {
-      "root": "C:\\Users\\hp\\Documents\\agency\\Webia-Solutionz-Modern-Digital-Agency-Website"
+      "root": "C:\\Users\\hp\\Documents\\agency\\agency"
     }
   },
-  "appDir": "C:\\Users\\hp\\Documents\\agency\\Webia-Solutionz-Modern-Digital-Agency-Website",
+  "appDir": "C:\\Users\\hp\\Documents\\agency\\agency",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
