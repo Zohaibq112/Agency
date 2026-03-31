@@ -2,7 +2,7 @@ import { useState } from "react";
 import SectionTitle from "./SectionTitle";
 
 const contactInfo = [
-  { id: 1, label: "Phone", value: "+923105319501", icon: "fas fa-phone-alt" },
+  { id: 1, label: "Phone", value: "+923010973811", icon: "fas fa-phone-alt" },
   { id: 2, label: "Mail", value: "zohaib@thewebdevelopers.site", icon: "fas fa-envelope" },
 ];
 
