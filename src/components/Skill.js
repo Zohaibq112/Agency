@@ -38,7 +38,7 @@ const skillsData = [
   { id: 15, name: "Selenium", icon: SiSelenium },
 ];
 
-// 🔥 split into 3 rows evenly
+// Split into 3 rows evenly
 const splitIntoRows = (arr, rowsCount) => {
   const rows = Array.from({ length: rowsCount }, () => []);
   arr.forEach((item, index) => {
@@ -51,13 +51,10 @@ const Skill = () => {
   const rows = splitIntoRows(skillsData, 3);
 
   return (
-    <section className="skill-section bg-gray" id="skills" >
+    <section className="skill-section bg-gray" id="skills">
       <div className="container">
-<SectionTitle heading={"Our Skills"} subHeading={"Skills"} />
-        {/* TEXT */}
-        
+        <SectionTitle heading={"Our Skills"} subHeading={"Skills"} />
 
-        {/* SKILLS */}
         <div className="skills-wrapper">
           {rows.map((row, index) => (
             <div key={index} className="slider">
@@ -98,7 +95,7 @@ const Skill = () => {
           gap: 20px;
         }
 
-        /* ✅ 4 CARDS PER ROW */
+        /* Desktop: 4 cards per row */
         .card {
           flex: 0 0 calc(25% - 15px);
           height: 140px;
@@ -115,29 +112,41 @@ const Skill = () => {
           margin-top: 10px;
         }
 
-        /* 🔥 STEP ANIMATION */
+        /* Slide animation (unchanged) */
         .move-right {
           animation: slideRight 10s infinite;
         }
-
         .move-left {
           animation: slideLeft 10s infinite;
         }
-
         @keyframes slideRight {
           0% { transform: translateX(0); }
-          30% { transform: translateX(0); }         /* pause */
-          50% { transform: translateX(-25%); }      /* move 1 card */
-          80% { transform: translateX(-25%); }      /* pause */
+          30% { transform: translateX(0); }
+          50% { transform: translateX(-25%); }
+          80% { transform: translateX(-25%); }
           100% { transform: translateX(0); }
         }
-
         @keyframes slideLeft {
           0% { transform: translateX(-25%); }
           30% { transform: translateX(-25%); }
           50% { transform: translateX(0); }
           80% { transform: translateX(0); }
           100% { transform: translateX(-25%); }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+          .card {
+            flex: 0 0 calc(50% - 10px); /* 2 cards per row */
+            height: 120px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .card {
+            flex: 0 0 calc(33.33% - 10px); /* 3 cards per row */
+            height: 100px;
+          }
         }
       `}</style>
     </section>
